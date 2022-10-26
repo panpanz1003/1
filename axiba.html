@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第三次</title>
+    <style>
+        body{
+            margin: 0px;
+            height: 100vh;
+            background-color: #eee;
+        }
+        /**{border: 1px solid black;
+        }*/
+        .flex{
+            display: flex;
+        }
+        .baise{
+            background-color: white;
+        }
+        .flex1{
+            flex:1;
+        }
+        .column{
+            flex-direction: column;
+        }
+        .mg8{
+            margin: 8px;
+        }
+        .mgr8{
+            margin-right:8px;
+        }
+        .mgt8{
+            margin-top: 8px;
+        }
+        .yinying{
+            box-shadow:  rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }      /*我抄知乎的阴影，嘻嘻哈哈*/
+        .daohanglan{
+            padding: 10px 20px;
+            border-bottom: 1px solid #bfbfbf;
+            font-size: 14px;
+            color: #666;
+        }
+
+    </style>
+</head>
+<body class="flex">
+<!--侧边栏-->
+<div style="width: 200px;z-index: 2" class="baise mg8">
+    <!--头像-->
+    <div style="padding: 10px;align-items: center;justify-content: center;border-bottom: 1px solid #9999"
+            class="flex">
+        <img src="data:image/png;base64,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"
+        width="200px"
+        height="100px"
+        >
+    </div>
+    <div class="flex1 ">
+        <div class="daohanglan column">产品
+        <!--semrush-->
+            <div style="flex: 1">semrush</div>
+            <div style="flex: 1">adspy</div>
+
+        </div>
+        <div class="daohanglan">使用环境</div>
+        <div class="daohanglan">用途</div>
+        <div class="daohanglan">价格</div>
+
+
+    </div>
+</div>
+<!--主区域-->
+<div class="flex1 column flex mgt8" >
+    <!--头部栏-->
+    <div style="height: 100px;z-index: 1"class="baise yinying">
+    </div>
+    <!--内容区-->
+    <div style="overflow: auto;" class="flex flex1 mgt8 ">
+        <!--左区-->
+        <div style="flex: 3" class="flex column mgr8 yinying">
+            <!--数据区-->
+            <div class="flex yinying">
+                <!--数据块-->
+                <div style="height: 100px" class="flex1 baise mgr8 yinying"></div>
+                <div style="height: 100px" class="flex1 baise mgr8 yinying"></div>
+                <div style="height: 100px" class="flex1 baise mgr8 yinying"></div>
+                <div style="height: 100px" class="flex1 baise yinying"></div>
+            </div>
+            <!--列表区-->
+            <div class="flex column yinying">
+                <!--列表项目-->
+                <div style="height: 160px" class=" baise mgt8 yinying"></div>
+                <div style="height: 160px" class=" baise mgt8 yinying"></div>
+                <div style="height: 160px" class=" baise mgt8 yinying"></div>
+                <div style="height: 160px" class=" baise mgt8 yinying"></div>
+                <div style="height: 160px" class=" baise mgt8 yinying"></div>
+                <div style="height: 160px" class=" baise yinying"></div>
+            </div>
+        </div>
+        <!--右区-->
+        <div style="flex: 1" class="flex column yinying">
+            <!--提示区-->
+            <div style="height: 300px"class="baise yinying"></div>
+            <!--消息区-->
+            <div style="height: 500px"class="baise mgt8 yinying"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
